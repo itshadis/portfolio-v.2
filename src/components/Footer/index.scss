@@ -1,0 +1,14 @@
+#footer {
+  background-color: #111111;
+  margin: 3px 3px 0 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  padding: 20px 10px;
+
+  .navlist {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,15 @@
+#navbar {
+  background-color: #111111;
+  margin-right: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: larger;
+  padding: 10px 10px;
+
+  .navlist {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+}

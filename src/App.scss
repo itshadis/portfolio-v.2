@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Rajdhani', sans-serif;
+  src: url();
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani';
+  font-weight: 500;
+  color: white;
+}
+
+body {
+  background-color: #111111;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+}

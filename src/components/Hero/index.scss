@@ -1,0 +1,33 @@
+#hero {
+  background-color: #111111;
+  height: 90vh;
+  margin: 3px 0 0 3px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .hero-details {
+    p {
+      font-size: 2rem;
+    }
+
+    p:nth-child(4) {
+      font-size: larger;
+    }
+
+    h1 {
+      font-size: 6rem;
+      text-indent: 2rem;
+    }
+  }
+
+  .foto-wrapper {
+    .foto-box {
+      
+      .foto {
+        width: 200px;
+      }
+    }
+  }
+}
