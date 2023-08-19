@@ -1,6 +1,54 @@
 #about {
   background-color: #111111;
-  height: 100vh;
+  height: 95vh;
   padding: 10px 10px;
   margin: 3px 3px 0 0;
+  
+    .tag {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 8px auto;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+  .about-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 36px;
+
+    .foto-wrapper {
+      .foto-box {
+        
+        .foto {
+          width: 200px;
+        }
+      }
+    }
+
+    .about-me-wrapper {
+      font-size: larger;
+      width: 40%;
+      position: relative;
+      background-color: aqua;
+
+      .about-me {
+        height: 100%;
+        transform: translate(-3px, -3px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #111111;
+        padding: 20px;
+
+        p {
+          text-align: justify;
+          line-height: 0.95;
+          word-spacing: 2px;
+          letter-spacing: 1px;
+        }
+      }
+
+    }
+  }
 }

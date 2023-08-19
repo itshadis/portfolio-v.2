@@ -1,8 +1,8 @@
 import './index.scss';
 
-function Tag({tag}) {
+function Tag({tag, variant}) {
   return (
-    <h1>{tag}</h1>
+    <h1 className={variant}>{tag}</h1>
   )
 }
 

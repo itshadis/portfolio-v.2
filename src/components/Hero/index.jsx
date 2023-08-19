@@ -1,3 +1,4 @@
+import CV from './CV';
 import './index.scss';
 
 function Hero() {
@@ -6,16 +7,11 @@ function Hero() {
       <div className='hero-details'>
         <p>Hello there, I am</p>
         <h1>Hadis</h1>
-        <p>A fullsatck Web Developer,</p>
-        <p>Based on Tangerang, Indonesia</p>
-        <div>My Resume</div>
+        <p>A Front-End Web Developer,</p>
+        <p>Based on Tangerang, Indonesia.</p>
       </div>
 
-      <div className='foto-wrapper'>
-        <div className='foto-box'>
-          <img className='foto' src="./public/asd2.png" alt="" />
-        </div>
-      </div>
+      <CV />
     </section>
   )
 }

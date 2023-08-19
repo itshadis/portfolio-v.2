@@ -1,15 +1,16 @@
 #hero {
   background-color: #111111;
-  height: 90vh;
+  height: 88vh;
   margin: 3px 0 0 3px;
   padding: 10px 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   .hero-details {
+    width: 40%;
     p {
-      font-size: 2rem;
+      font-size: 2.3rem;
     }
 
     p:nth-child(4) {
@@ -19,6 +20,7 @@
     h1 {
       font-size: 6rem;
       text-indent: 2rem;
+      color: aqua;
     }
   }
 

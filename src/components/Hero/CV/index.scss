@@ -1,0 +1,110 @@
+.cv-wrapper {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .circle-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    border: 1px solid white;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 50%;
+    position: absolute;
+    animation: circle1 4s linear infinite;
+    
+    @keyframes circle1 {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+
+      span:nth-child(1) {
+        position: absolute;
+        z-index: 1;
+        bottom: -4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      span:nth-child(2) {
+        position: absolute;
+        z-index: 1;
+        left: -4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+      }
+  }
+
+  .circle-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 50%;
+    position: absolute;
+
+    span:nth-child(1) {
+      position: absolute;
+      z-index: 1;
+      top: -4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: white;
+    }
+    span:nth-child(2) {
+      position: absolute;
+      z-index: 1;
+      bottom: -4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    span:nth-child(3) {
+      position: absolute;
+      background-color: aqua;
+      filter: blur(8px);
+      border-radius: 50%;
+    }
+
+    .fadeIn {
+      transition: all;
+      animation: animateFadeIn 0.1s linear forwards;
+    }
+
+    button {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      background-color: inherit;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: gray;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    @keyframes animateFadeIn {
+      from {width: 0; height: 0;}
+      to {width: 100%; height: 100%;}
+    }
+  }
+}
