@@ -1,54 +1,141 @@
 #about {
   background-color: #111111;
-  height: 95vh;
   padding: 10px 10px;
   margin: 3px 3px 0 0;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 36px 0;
+
     .tag {
       font-size: 2rem;
       font-weight: 700;
-      margin: 8px auto;
       text-align: center;
       letter-spacing: 2px;
     }
 
-  .about-wrapper {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 36px;
-
-    .foto-wrapper {
-      .foto-box {
-        
-        .foto {
-          width: 200px;
-        }
-      }
-    }
-
-    .about-me-wrapper {
-      font-size: larger;
-      width: 40%;
-      position: relative;
-      background-color: aqua;
-
-      .about-me {
-        height: 100%;
-        transform: translate(-3px, -3px);
+    .about-section {
+      
+      .about-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #111111;
-        padding: 20px;
-
-        p {
-          text-align: justify;
-          line-height: 0.95;
-          word-spacing: 2px;
-          letter-spacing: 1px;
+        justify-content: space-around;
+        margin-top: 28px;
+  
+        .foto-wrapper {
+          width: 40%;
+          position: relative;
+          background-color: aqua;
+  
+          .foto-box {
+            height: 100%;
+            transform: translate(2px, 2px);
+            display: flex;
+            justify-content: center;
+            background-color: #111111;
+  
+            .foto {
+              width: 200px;
+            }
+          }
+        }
+  
+        .about-me-wrapper {
+          font-size: larger;
+          width: 40%;
+          position: relative;
+          background-color: aqua;
+  
+          .about-me {
+            height: 100%;
+            transform: translate(-2px, -2px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #111111;
+            padding: 20px;
+  
+            p {
+              text-align: justify;
+              line-height: 0.95;
+              word-spacing: 2px;
+              letter-spacing: 1px;
+            }
+          }
+  
         }
       }
-
     }
-  }
+  
+
+    .skill-section {
+      margin: 36px 0;
+      h3 {
+        margin-top: 20px;
+      }
+      
+      .skill-wrapper {
+        display: flex;
+        justify-content: space-around;
+
+        .technical-skill {
+          width: 40%;
+          text-align: center;
+          font-size: 1.5rem;
+
+          .skill-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 20px;
+
+            .icon {
+              position: relative;
+              padding: 2px;
+        
+              .text-icon {
+                position: absolute;
+                font-size: 0.8rem;
+                left: 0;
+                bottom: -12px;
+                background-color: white;
+                color: black;
+                padding: 1px 4px;
+                border-radius: 2px;
+                visibility: hidden;
+              }
+            }
+
+            .icon:hover .text-icon {
+              visibility: visible;
+            }
+          }
+        }
+
+        .soft-skill {
+          width: 40%;
+          text-align: center;
+          font-size: 1.5rem;
+
+          .soft-skill-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 20px;
+
+            p {
+              font-size: 1.2rem;
+              padding: 2px 10px;
+              transition: all 1s;
+            }
+
+            p:hover {
+              color: aqua;
+            }
+
+          }
+        }
+      }
+    }
 }

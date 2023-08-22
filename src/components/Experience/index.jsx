@@ -1,10 +1,13 @@
-import Tag from '../Tag';
 import './index.scss';
 
 function Exprerience() {
   return (
     <section id='experience'>
-      <Tag tag={'#Experience'} />
+      <h1 className='tag'>My Experience</h1>
+      <div className='experience-wrapper'>
+        <div className='line'>
+        </div>
+      </div>
     </section>
   )
 }
