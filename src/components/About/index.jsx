@@ -79,7 +79,7 @@ function About() {
               </p>
               <p>I have passion for all things technology especially programming. I love coding, its a pride of being able to translate ideas into code. Now i'm so enthusiast with React.js for developing of front-end web applications.
               </p>
-              <p>I also creating back-end or full stack web apps using MERN(MYSQL/MongoDB, Express, React, Node) stack.</p>
+              <p>I also creating back-end or full stack web apps with MERN(MYSQL/MongoDB, Express, React, Node) stack.</p>
             </div>
           </div>
         </div>
