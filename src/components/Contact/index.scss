@@ -1,6 +1,26 @@
 #contact {
-  height: 100vh;
   background-color: #111111;
   padding: 10px 10px;
   margin: 3px 0 0 3px;
+
+  .tag {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #111111;
+    margin-top: 2rem;
+
+    .text {
+      width: 50%;
+      padding: 1rem 3rem;
+      font-size: 1.4rem;
+      text-align: justify;
+    }
+  }
 }
