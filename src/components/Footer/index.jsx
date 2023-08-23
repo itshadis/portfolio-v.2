@@ -4,7 +4,8 @@ function Footer() {
 
   return (
     <footer id='footer'>
-      Footer
+      <h3>Created and Design by Hadis</h3>
+      <p>Powered by Netlify</p>
     </footer>
   )
 }
