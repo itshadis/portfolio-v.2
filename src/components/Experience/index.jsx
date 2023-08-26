@@ -23,28 +23,27 @@ function Exprerience() {
       <h1 className='tag'>My Experience</h1>
       <div className='experience-wrapper'>
         <div className='line'></div>
+        <div className='line2'></div>
         <div className='card-container'>
           <div className='card-wrapper'>
             <span className='node'></span>
             <span className='date'>{exp[0].date}</span>
             <div className='card'>
-              <h4 className='title'>{exp[0].title}</h4>
+              <h4 className='title'>{exp[0].title}<span className='status'>{' (' + exp[0].status + ')'}</span></h4>
               <p className='course'>{exp[0].course}</p>
-              <span className='status'>{exp[0].status}</span>
               <hr />
               <p className='describe'>{exp[0].describe}</p>
             </div>
           </div>
         </div>
 
-        <div style={{flexDirection: 'row-reverse'}} className='card-container'>
-          <div style={{ justifyContent: 'end'}} className='card-wrapper'>
-            <span style={{left: -5}} className='node'></span>
-            <span style={{left: -170}} className='date'>{exp[1].date}</span>
-            <div className='card'>
-              <h4 className='title'>{exp[1].title}</h4>
+        <div className='card-container'>
+          <div className='card-wrapper2'>
+            <span className='node2'></span>
+            <span className='date2'>{exp[1].date}</span>
+            <div className='card2'>
+              <h4 className='title'>{exp[1].title} <span className='status'>{'('+ exp[1].status + ')'}</span></h4>
               <p className='course'>{exp[1].course}</p>
-              <span className='status'>{exp[1].status}</span>
               <hr />
               <p className='describe'>{exp[1].describe}</p>
             </div>

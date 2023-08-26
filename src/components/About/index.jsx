@@ -90,7 +90,7 @@ function About() {
         <div className='skill-wrapper'>
           <div className='technical-skill'>
             <h3>Technical Skills</h3>
-            <div className='skill-wrapper'>
+            <div className='skill-icon-wrapper'>
               {icons.map((item, i) => (
                 <span className='icon' style={{top: item.top, left: item.left}} key={i}>{item.icon}
                   <span className='text-icon'>{item.tag}</span>

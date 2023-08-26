@@ -11,43 +11,43 @@
     font-weight: 700;
     text-align: center;
     letter-spacing: 2px;
-    margin: 20px 0;
+    margin: 0.5rem 0 1rem 0;
   }
 
   .experience-wrapper {
-    width: 80%;
+    width: 90%;
+    margin: 1rem;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 56px;
+    gap: 4rem;
     
     .card-container {
       position: relative;
-      width: 100%;
       display: flex;
 
-      .card-wrapper {
-        width: 50%;
+      .card-wrapper, .card-wrapper2 {
         position: relative;
         display: flex;
+        transform: translate(1rem,2rem);
       
-        .node {
+        .node, .node2 {
           position: absolute;
-          top: 5px;
-          right: -6px;
+          top: -1.6rem;
+          left: -1.25rem;
           width: 10px;
           height: 10px;
           border-radius: 50%;
           background-color: aqua;
         }
       
-        .date {
+        .date, .date2 {
           position: absolute;
-          right: -170px;
+          top: -1.8rem;
         }
       
-        .card {
-          width: 22rem;
+        .card, .card2 {
+          width: 95%;
           border: 1px solid aqua;
           border-radius: 4px;
           padding: 10px;
@@ -60,7 +60,7 @@
           }
       
           .status {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
           }
       
           hr {
@@ -75,12 +75,64 @@
       }
     }
     
-    .line {
+    .line, .line2 {
       width: 2px;
       height: 100%;
       position: absolute;
-      left: 50%;
+      left: 0;
       background-color: white;
+    }
+    .line2 {
+      width: 2px;
+      left: 0;
+      bottom: -3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .experience-wrapper {
+
+      .card-container {
+
+        .card-wrapper, .card-wrapper2 {
+          width: 100%;
+          margin: 0 auto;
+          transform: translate(0, 2rem);
+
+          .node, .node2 {
+            left: calc(50% - 4px);
+            top: 0.5rem;
+          }
+
+          .date {
+            top: 4px;
+            right: 35%
+          }
+
+          .card {
+            width: 35%;
+            transform: translate(30%);
+          }
+
+          .card2 {
+            width: 35%;
+            transform: translate(-30%);
+          }
+
+          .date2 {
+            top: 4px;
+            left: 35%;
+          }
+        }
+
+        .card-wrapper2 {
+          justify-content: end;
+        }
+      }
+
+      .line, .line2 {
+        left: 50%;
+      }
     }
   }
 }

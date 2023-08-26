@@ -1,7 +1,5 @@
-import { FaHtml5, FaReact, FaNodeJs, FaSass, FaGithub } from 'react-icons/fa';
-import { IoLogoCss3 } from 'react-icons/io';
-import { RiJavascriptFill, RiBootstrapFill } from 'react-icons/ri';
-import { SiTailwindcss, SiRedux, SiExpress, SiMysql } from 'react-icons/si';
+import { FaReact, FaNodeJs } from 'react-icons/fa';
+import { SiTailwindcss, SiExpress } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import ListWorks from './ListWorks';
 import './index.scss';
@@ -36,12 +34,15 @@ function Work() {
       <h1 className='tag'>My Works</h1>
       <div className='work-container'>
         <div className='work-wrapper'>
+          <h1>Orderin</h1>
           <ListWorks img={works[0].img} title={works[0].title} detail={works[0].detail} stack={works[0].stack} link={works[0].link} />
         </div>
         <div style={{flexDirection: 'row-reverse'}} className='work-wrapper'>
+          <h1>Muvi</h1>
           <ListWorks img={works[1].img} title={works[1].title} detail={works[1].detail} stack={works[1].stack} link={works[1].link} />
         </div>
         <div className='work-wrapper'>
+          <h1>Web - Calc</h1>
           <ListWorks img={works[2].img} title={works[2].title} detail={works[2].detail} stack={works[2].stack} link={works[2].link} />
         </div>
       </div>

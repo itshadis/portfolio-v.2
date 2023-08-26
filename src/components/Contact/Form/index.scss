@@ -1,5 +1,4 @@
 .form-wrapper {
-  width: 50%;
   border: 1px solid aqua;
   position: relative;
   
@@ -7,14 +6,14 @@
     background-color: black;
     position: absolute;
     z-index: 1;
-    top: 2rem;
-    left: -1rem;
+    top: -1rem;
+    right: 4rem;
     width: 2rem;
     height: 2rem;
     border: 1px solid aqua;
     border-top: none;
     border-right: none;
-    transform: rotate(45deg);
+    transform: rotate(135deg);
   }
 
   form {
@@ -29,7 +28,7 @@
     }
   
     input {
-      width: 20rem;
+      width: 100%;
       height: 2.8rem;
       letter-spacing: 1px;
       color: aqua;
@@ -42,7 +41,7 @@
     }
   
     textarea {
-      width: 20rem;
+      width: 100%;
       height: 10rem;
       letter-spacing: 1px;
       color: aqua;
@@ -55,7 +54,7 @@
     }
 
     .button-wrapper {
-      width: 20rem;
+      width: 100%;
 
       .button {
         background-color: aqua;

@@ -19,6 +19,8 @@ function ListWorks({img, title, detail, stack, link}) {
               ))}
             </ul>
           </div>
+        </div>
+        <div className='button-wrapper'>
           <button className='button'><a href={link} target='_blank'>Demo</a></button>
         </div>
       </div>

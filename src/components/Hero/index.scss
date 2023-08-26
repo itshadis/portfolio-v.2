@@ -2,13 +2,17 @@
   background-color: #111111;
   height: 88vh;
   margin: 3px 0 0 3px;
-  padding: 10px 10px;
+  padding: 2rem 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
   .hero-details {
-    width: 40%;
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+
     p {
       font-size: 2.3rem;
     }
@@ -33,3 +37,27 @@
     }
   }
 }
+
+@media (min-width: 930px) {
+  #hero {
+    flex-direction: row;
+    justify-content: center;
+
+    .cv-wrapper {
+      width: 40%;
+      transform: translateX(-5rem);
+    }
+
+    .hero-details {
+      width: 40%;
+    }
+  }
+}
+
+// background-color: #111111;
+//   height: 88vh;
+//   margin: 3px 0 0 3px;
+//   padding: 10px 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
