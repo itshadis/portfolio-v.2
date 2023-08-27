@@ -2,29 +2,30 @@ import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss, SiExpress } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import ListWorks from './ListWorks';
+import { RiJavascriptFill } from 'react-icons/ri';
 import './index.scss';
 
 function Work() {
   const works = [
     {
-      img: '/self-order.png',
+      img: '/images/self-order.png',
       title: 'Orderin',
       detail: `A simple self-order McDonald's clone that purpose to ease customers to ordering and without having to queue. The customer that have been ordering will get the code which will be given to the cashier to confirm the payment.`,
-      stack: [<FaReact />, <SiTailwindcss />, <FaNodeJs />, <SiExpress />],
+      stack: [<RiJavascriptFill />, <FaReact />, <SiTailwindcss />, <FaNodeJs />, <SiExpress />],
       link: 'https://its-orderin.netlify.app'
     },
     {
-      img: '/muvi.png',
+      img: '/images/muvi.png',
       title: 'Muvi',
       detail: `An application that displays a list of the latest movies from around the world along with detailed information about each movie. This application provides movies sorted into categories such as 'Trending Today', 'Top Rated', and 'Upcoming'. Additionally, you have the option to search for a specific movie of your choice.`,
-      stack: [<FaReact />, <SiTailwindcss />,<TbApi /> ],
+      stack: [<RiJavascriptFill />, <FaReact />, <SiTailwindcss />,<TbApi /> ],
       link: 'https://its-muvi.netlify.app/'
     },
     {
-      img: '/web-calc.png',
+      img: '/images/web-calc.png',
       title: 'Web - Calc',
       detail: `Web - Calc is a calculation application with various functions such as simple multiplication, addition, subtraction (standard calculator), calculation of ideal body weight (BMI), temperature conversion calculation, and other calculations that will be added to this application..`,
-      stack: [<FaReact />, <SiTailwindcss />],
+      stack: [<RiJavascriptFill />, <FaReact />, <SiTailwindcss />],
       link: 'https://its-web-calc.netlify.app'
     }
   ]

@@ -12,9 +12,6 @@ function CV() {
     setFade('');
   }
 
-  const handleClick = (e) => {
-    e.preventDefault()
-  }
   return (
     <div className='cv-wrapper'>
       <div className='circle-1'>
@@ -25,7 +22,7 @@ function CV() {
         <span></span>
         <span></span>
         <span className={fade}></span>
-        <button onMouseEnter={handleMouseEnter} onMouseOut={handleMouseOut} onClick={handleClick} >Download CV</button>
+        <a href='/documents/cv.pdf' onMouseEnter={handleMouseEnter} onMouseOut={handleMouseOut} download>Download CV</a>
       </div>
     </div>
   )

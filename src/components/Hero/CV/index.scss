@@ -88,7 +88,10 @@
       animation: animateFadeIn 0.1s linear forwards;
     }
 
-    button {
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       width: inherit;
       height: inherit;
@@ -98,9 +101,10 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: gray;
+      text-decoration: none;
     }
 
-    button:hover {
+    a:hover {
       cursor: pointer;
     }
 

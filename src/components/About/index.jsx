@@ -69,7 +69,7 @@ function About() {
         <div className='about-wrapper'>
           <div className='foto-wrapper'>
             <div className='foto-box'>
-              <img className='foto' src="/undraw.svg" alt="" />
+              <img className='foto' src="/images/undraw.svg" alt="" />
             </div>
           </div>
 
