@@ -1,9 +1,10 @@
 #work {
   background-color: #111111;
-  padding: 10px 10px;
-  margin: 3px 3px 0 0;
+  padding: 1rem 2rem 2rem;
+  margin: 1px 1px 0 0;
 
   .tag {
+    margin: 1rem 0;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
@@ -118,5 +119,12 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  #work {
+    padding: 10px;
+    margin: 3px 3px 0 0;
   }
 }

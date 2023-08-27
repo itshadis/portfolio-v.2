@@ -15,7 +15,7 @@ function Navbar() {
           <span></span>
           <span></span>
         </div>
-        <ul style={{top: isShow ? '0' : '-100%'}} className='navlist'>
+        <ul style={{top: isShow ? '0' : '-140%'}} className='navlist'>
           {navlist.map((list, i) => (
             <li onClick={() => {setIsShow(!isShow)}} key={i}><a href={'#'+list.toLowerCase()}>{list}</a></li>
           ))}

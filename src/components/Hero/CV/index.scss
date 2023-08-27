@@ -10,8 +10,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border: 1px solid white;
     border-left: none;
     border-bottom: none;
@@ -48,8 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border: 1px solid white;
     border-top: none;
     border-left: none;
@@ -114,5 +114,15 @@
 @media (min-width: 640px) {
   .cv-wrapper {
     transform: translateX(5rem);
+    
+    .circle-1 {
+      width: 220px;
+      height: 220px;
+    }
+
+    .circle-2 {
+      width: 180px;
+      height: 180px;
+    }
   }
 }

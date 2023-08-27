@@ -1,7 +1,7 @@
 #hero {
   background-color: #111111;
   height: 88vh;
-  margin: 3px 0 0 3px;
+  margin: 1px 0 0 1px;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,7 @@
 
 @media (min-width: 930px) {
   #hero {
+    margin: 3px 0 0 3px;
     flex-direction: row;
     justify-content: center;
 
@@ -53,11 +54,3 @@
     }
   }
 }
-
-// background-color: #111111;
-//   height: 88vh;
-//   margin: 3px 0 0 3px;
-//   padding: 10px 10px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;

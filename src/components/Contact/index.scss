@@ -2,8 +2,8 @@ $layout-breakpoint-small: 960px;
 
 #contact {
   background-color: #111111;
-  padding: 1rem 0 3rem 0;
-  margin: 3px 0 0 3px;
+  padding: 1rem 1rem 3rem 1rem;
+  margin: 1px 0 0 1px;
 
   .tag {
     font-size: 2rem;
@@ -35,8 +35,13 @@ $layout-breakpoint-small: 960px;
       }
     }
   }
+}
 
-  @media (min-width: $layout-breakpoint-small) {
+@media (min-width: $layout-breakpoint-small) {
+  #contact {
+    padding: 1rem 0 3rem 0;
+    margin: 3px 0 0 3px;
+
     .wrapper {
       width: 90%;
       margin: 0 auto;
@@ -54,10 +59,10 @@ $layout-breakpoint-small: 960px;
           list-style: none;
         }
       }
-
+  
       .form-wrapper {
         width: 50%;
-
+  
         .box {
           top: 2rem;
           left: -1rem;

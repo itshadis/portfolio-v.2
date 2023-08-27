@@ -1,6 +1,6 @@
 .navbar {
   background-color: #111111;
-  margin-right: 3px;
+  margin-right: 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,7 @@
 
   .navlist {
     position: fixed;
-    top: -100%;
+    top: -130%;
     z-index: 2;
     background-color: aqua;
     width: 95%;
@@ -57,6 +57,7 @@
 
 @media (min-width: 768px) {
   .navbar {
+    margin-right: 3px;
 
     .hamburger-list {
       display: none;
