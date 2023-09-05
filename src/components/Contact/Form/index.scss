@@ -55,6 +55,10 @@
 
     .button-wrapper {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 1rem;
 
       .button {
         background-color: aqua;
@@ -69,6 +73,24 @@
 
       .button:hover {
         background-color: rgb(0, 190, 190);
+      }
+
+      .message-status {
+        animation: approach 4s forwards linear;
+
+        @keyframes approach {
+          0% {opacity: 0;}
+          20% {opacity: 1;}
+          70% {opacity: 1;}
+          100% {opacity: 0;}
+        }
+      }
+    }
+
+    @media (min-width: 640px) {
+      .button-wrapper {
+        flex-direction: row;
+        align-items: center;
       }
     }
   }

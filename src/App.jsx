@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div className='wrapper'>
+      <div className='light-animate'></div>
       <Navbar />
       <Hero />
       <About />

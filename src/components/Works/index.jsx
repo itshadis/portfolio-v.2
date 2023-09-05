@@ -32,7 +32,7 @@ function Work() {
 
   return (
     <section id='work'>
-      <h1 className='tag'>My Works</h1>
+      <h1 className='tag'>My Projects</h1>
       <div className='work-container'>
         <div className='work-wrapper'>
           <h1>Orderin</h1>

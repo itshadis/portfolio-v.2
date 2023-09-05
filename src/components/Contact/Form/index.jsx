@@ -1,26 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './index.scss';
 
 function Form() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState();
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setStatusMessage(undefined)
+    }, 5000);
+  }, [statusMessage])
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Lakukan sesuatu dengan data yang diisi dalam formData
-    console.log(formData);
-    // Contoh: Kirim data ke server, lakukan validasi, dll.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = ({
+      Name: name,
+      Email: email,
+      Message: message
+    })
+
+    axios.post('https://sheet.best/api/sheets/7afb9039-e979-475e-a51e-776dce6b7d2a', formData)
+         .then(res => {
+            console.log(res)
+            if(res.request.status !== 200) {
+              setStatusMessage(false);
+            }
+            setStatusMessage(true);
+          }
+         );
+    
+    setName('');
+    setEmail('');
+    setMessage('');
   }
   return (
     <div className='form-wrapper'>
@@ -29,25 +43,35 @@ function Form() {
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           placeholder='Name'
+          required
         />
         <input
           type="email"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder='Email'
+          required
         />
         <textarea
           name="message"
-          value={formData.message}
-          onChange={handleChange}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           placeholder='Message'
+          required
         />
         <div className='button-wrapper'>
           <button className='button' type="submit">Submit</button>
+          {statusMessage === undefined ? (
+            <span></span>
+          ) : statusMessage ? (
+            <span className='message-status'>😊 Your message has been received, thank you..</span>
+          ) : (
+            <span className='message-status'>🙁 Somthing wrong, sorry your message failed to send..</span>
+          )}
         </div>
       </form>
     </div>

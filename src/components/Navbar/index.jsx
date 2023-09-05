@@ -4,7 +4,7 @@ import './index.scss';
 function Navbar() {
   const [isShow, setIsShow] = useState(false);
 
-  const navlist = ['Home' ,'About', 'Experience', 'Work', 'Contact'];
+  const navlist = ['Home' ,'About', 'Experience', 'Projects', 'Contact'];
   
   return (
     <>
