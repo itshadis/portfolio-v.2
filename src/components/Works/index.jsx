@@ -31,7 +31,7 @@ function Work() {
   ]
 
   return (
-    <section id='work'>
+    <section id='projects'>
       <h1 className='tag'>My Projects</h1>
       <div className='work-container'>
         <div className='work-wrapper'>
