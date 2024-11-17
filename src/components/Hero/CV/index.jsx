@@ -22,7 +22,7 @@ function CV() {
         <span></span>
         <span></span>
         <span className={fade}></span>
-        <a href='/documents/cv.pdf' onMouseEnter={handleMouseEnter} onMouseOut={handleMouseOut} download>Download CV</a>
+        <a href='/documents/cv_hadis.pdf' onMouseEnter={handleMouseEnter} onMouseOut={handleMouseOut} download>Download CV</a>
       </div>
     </div>
   )
