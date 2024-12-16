@@ -1,9 +1,8 @@
-import gsap from 'gsap';
-import CV from './CV';
-import './index.scss';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { use } from 'react';
+import CV from './CV';
+import gsap from 'gsap';
+import './index.scss';
 
 gsap.registerPlugin(useGSAP)
 
@@ -27,7 +26,7 @@ function Hero() {
         {
           x: -500,
           opacity: 0,
-          duration: 3,
+          duration: 2,
           delay: 1,
           ease: 'power4.out'
         }
