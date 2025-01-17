@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import About from './components/About';
-import Exprerience from './components/Experience';
+import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -40,7 +40,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Exprerience />
+      <Experience />
       <Work />
       <Contact />
       <Footer />
