@@ -1,12 +1,15 @@
-import { FaHtml5, FaReact, FaNodeJs, FaSass, FaGithub } from 'react-icons/fa';
-import { IoLogoCss3 } from 'react-icons/io';
-import { RiJavascriptFill, RiBootstrapFill } from 'react-icons/ri';
-import { SiTailwindcss, SiRedux, SiExpress, SiMysql } from 'react-icons/si';
-import { TbApi } from 'react-icons/tb';
 import { useEffect, useRef } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import './index.scss';
+
+import { SiTailwindcss, SiRedux, SiExpress, SiMysql, SiPostgresql, SiAntdesign, SiDevexpress, SiPostman } from 'react-icons/si';
+import { FaHtml5, FaReact, FaNodeJs, FaSass, FaGithub, FaPhp, FaLaravel, FaGitAlt, FaJira } from 'react-icons/fa';
+import { RiJavascriptFill, RiBootstrapFill } from 'react-icons/ri';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { IoLogoCss3 } from 'react-icons/io';
+import { FiGitlab } from 'react-icons/fi';
+import { TbApi } from 'react-icons/tb';
 
 const icons = [
   {
@@ -22,6 +25,18 @@ const icons = [
     tag: 'Javascript'
   },
   {
+    icon: <BiLogoTypescript size={40} />,
+    tag: 'Typescript'
+  },
+  {
+    icon: <FaPhp size={40} />,
+    tag: 'PHP'
+  },
+  {
+    icon: <FaLaravel size={40} />,
+    tag: 'Laravel'
+  },
+  {
     icon: <FaSass size={40} />,
     tag: 'SASS'
   },
@@ -32,6 +47,14 @@ const icons = [
   {
     icon: <SiTailwindcss size={40} />,
     tag: 'TailwindCSS'
+  },
+  {
+    icon: <SiAntdesign size={40} />,
+    tag: 'AntDesign'
+  },
+  {
+    icon: <SiDevexpress size={40} />,
+    tag: 'DevExpress'
   },
   {
     icon: <FaReact size={40} />,
@@ -54,13 +77,33 @@ const icons = [
     tag: 'MySQL'
   },
   {
+    icon: <SiPostgresql size={40} />,
+    tag: 'PostgreSQL'
+  },
+  {
     icon: <TbApi size={40} />,
     tag: 'API'
   },
   {
+    icon: <FaGitAlt  size={40} />,
+    tag: 'Git'
+  },
+  {
     icon: <FaGithub size={40} />,
     tag: 'GitHub'
-  }
+  },
+  {
+    icon: <FiGitlab size={40} />,
+    tag: 'GitLab'
+  },
+  {
+    icon: <SiPostman size={40} />,
+    tag: 'Postman'
+  },
+  {
+    icon: <FaJira size={40} />,
+    tag: 'Jira'
+  },
 ]
 
 const softSkills = ["Problem Solving", "Fast Learner", "Analytical Thinking", "Teamwork", "Adaptability", "Time Management"]

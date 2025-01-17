@@ -14,7 +14,6 @@ function Experience() {
       ease: 'power2.out',
       duration: 6, // Duration of the animation
       scrollTrigger: {
-        markers: true,
         trigger: '.barrier', // Element to observe
         start: 'top 70%', // Start the animation when the top of .barrier hits the center of the viewport
       },
