@@ -11,7 +11,9 @@ import { IoLogoCss3 } from 'react-icons/io';
 import { FiGitlab } from 'react-icons/fi';
 import { TbApi } from 'react-icons/tb';
 
-const icons = [
+
+const SOFT_SKILL = ["Problem Solving", "Fast Learner", "Analytical Thinking", "Teamwork", "Adaptability", "Time Management"]
+const ICONS = [
   {
     icon: <FaHtml5 size={40} />,
     tag: 'HTML'
@@ -105,8 +107,6 @@ const icons = [
     tag: 'Jira'
   },
 ]
-
-const softSkills = ["Problem Solving", "Fast Learner", "Analytical Thinking", "Teamwork", "Adaptability", "Time Management"]
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -207,7 +207,7 @@ function About() {
           <div className='technical-skill'>
             <h3>Technical Skills</h3>
             <div className='skill-icon-wrapper'>
-              {icons.map((item, i) => (
+              {ICONS.map((item, i) => (
                 <span className='icon' style={{top: item.top, left: item.left}} key={i}>{item.icon}
                   <span className='text-icon'>{item.tag}</span>
                 </span>
@@ -218,7 +218,7 @@ function About() {
           <div className='soft-skill'>
             <h3>Soft Skills</h3>
             <div className='soft-skill-wrapper'>
-              {softSkills.map((item, i) => (
+              {SOFT_SKILL.map((item, i) => (
                 <p className='skill' key={i}>{item}</p>
               ))}
             </div>

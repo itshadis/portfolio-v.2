@@ -6,26 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Experience() {
-
-  useEffect(() => {
-    gsap.to('.barrier', {
-      y: '100%', // Move the barrier to the bottom
-      ease: 'power2.out',
-      duration: 6, // Duration of the animation
-      scrollTrigger: {
-        trigger: '.barrier', // Element to observe
-        start: 'top 70%', // Start the animation when the top of .barrier hits the center of the viewport
-      },
-    });
-  }, []);
-
-  const exp = [
+const exp = [
     {
       title: 'Student Full Stack Development',
       company: "Harisenin.com",
       date: 'May, 2023 - Sep, 2023',
-      skill: 'Course : Front-End Web Development (React.js)',
       describe: [
         "Learn how to develop fullstack web application and work together as a team to develop the project.",
         "Developed car rental application web based as final project, built with MERN(MySQL, Express.js, React.js, Node.js) and some libraries inside to ease developed the application."
@@ -35,7 +20,6 @@ function Experience() {
       title: 'Fullstack Web Developer',
       company: "Freelance",
       date: 'Sep, 2023 - Dec, 2023',
-      skill: 'Full Stack Web Development (MySQL, Express, React, Node)',
       describe: [
         "Created a Decision Support System (DSS) to select best employees at PT Samco Farma.",
         "Implemented the Simple Additive Weighting methodology for calculate best employees in a web based application."
@@ -45,7 +29,6 @@ function Experience() {
       title: 'Team Buddy Frontend Developer',
       company: "Harisenin.com",
       date: 'Feb, 2024 - May, 2024',
-      skill: 'Full Stack Web Development (MySQL, Express, React, Node)',
       describe: [
         "Assisted students throughout the bootcamp program, addressing any challenges they encountered during the training.",
         "Provided guidance and support to ensure students' success in their learning journey.",
@@ -57,7 +40,6 @@ function Experience() {
       title: 'Frontend Developer',
       company: "PT Electronic Data Interchange Indonesia",
       date: 'Nov, 2023 - Dec, 2024',
-      skill: 'Full Stack Web Development (MySQL, Express, React, Node)',
       describe: [
         "Fixed bugs in the Ceisa 4.0 customs application.",
         "Added new features to the Ceisa 4.0 customs application.",
@@ -72,7 +54,35 @@ function Experience() {
         "Assisted in creating documentation from the frontend side."
       ]
     },
+    {
+      title: 'Frontend Developer',
+      company: "PT Sinar Sakti Internasional",
+      date: 'Feb, 2025 - Now',
+      describe: [
+        "Develop and maintain the Puskeu Presisi 5.0 Polri application.",
+        "Use Next.js and TypeScript for frontend development",
+        "Contribute to building a reusable UI component library for internal use.",
+        "Convert Figma designs into code.",
+        "Integrate APIs into the Tunkin Puskeu Polri application.",
+        "Develop and deploy the Dashboard Puskeu Polri application.",
+        "Creating interactive and visually appealing charts using ApexCharts.js for the Dashboard Puskeu Polri.",
+      ]
+    },
   ]
+
+function Experience() {
+
+  useEffect(() => {
+    gsap.to('.barrier', {
+      y: '100%', // Move the barrier to the bottom
+      ease: 'power2.out',
+      duration: 6, // Duration of the animation
+      scrollTrigger: {
+        trigger: '.barrier', // Element to observe
+        start: 'top 70%', // Start the animation when the top of .barrier hits the center of the viewport
+      },
+    });
+  }, []);
 
   return (
     <section id="experience">
