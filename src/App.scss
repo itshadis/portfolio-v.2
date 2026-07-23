@@ -1,15 +1,14 @@
-@font-face {
-  font-family: 'Rajdhani', sans-serif;
-  src: url();
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Rajdhani';
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.863);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
