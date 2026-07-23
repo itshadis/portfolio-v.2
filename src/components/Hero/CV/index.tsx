@@ -29,7 +29,7 @@ function CV({ className }: CVProps) {
         <span></span>
         <span className={fade}></span>
         <a
-          href="/documents/cv_hadis.pdf"
+          href="/documents/CV ATS - Hadis.pdf"
           onMouseEnter={handleMouseEnter}
           onMouseOut={handleMouseOut}
           download
