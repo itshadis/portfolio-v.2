@@ -11,6 +11,9 @@
 /out/
 /build
 
+# Agents
+/.agents/
+
 # Production
 /dist
 
