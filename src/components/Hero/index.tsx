@@ -36,7 +36,7 @@ function Hero() {
       <div className="hero-details">
         <p>Hello there, I am</p>
         <h1>Hadis</h1>
-        <p>A Front-End Web Developer,</p>
+        <p>A Software Developer,</p>
         <p>Based on Tangerang, Indonesia.</p>
       </div>
 

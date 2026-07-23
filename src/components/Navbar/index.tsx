@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <>
       <nav id="home" className="navbar">
-        <h1>kidDev</h1>
+        <h1>Software Developer</h1>
         <div onClick={() => setIsShow(!isShow)} className="hamburger-list">
           <span></span>
           <span></span>

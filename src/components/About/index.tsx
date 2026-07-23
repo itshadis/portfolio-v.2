@@ -4,9 +4,26 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './index.scss';
 
-import { SiTailwindcss, SiRedux, SiExpress, SiMysql, SiPostgresql, SiAntdesign, SiDevexpress, SiPostman } from 'react-icons/si';
+import {
+  SiTailwindcss,
+  SiRedux,
+  SiExpress,
+  SiMysql,
+  SiPostgresql,
+  SiAntdesign,
+  SiPostman,
+  SiNextdotjs,
+  SiPython,
+  SiDjango,
+  SiGo,
+  SiAstro,
+  SiFigma,
+  SiNginx,
+  SiSonarqube,
+} from 'react-icons/si';
 import { FaHtml5, FaReact, FaNodeJs, FaSass, FaGithub, FaPhp, FaLaravel, FaGitAlt, FaJira } from 'react-icons/fa';
 import { RiJavascriptFill, RiBootstrapFill } from 'react-icons/ri';
+import { BsBarChartFill } from 'react-icons/bs';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { IoLogoCss3 } from 'react-icons/io';
@@ -20,31 +37,44 @@ interface SkillIcon {
   left?: string | number;
 }
 
-const SOFT_SKILL: string[] = ["Problem Solving", "Fast Learner", "Analytical Thinking", "Teamwork", "Adaptability", "Time Management"];
+const SOFT_SKILL: string[] = [
+  "Problem Solving",
+  "Fast Learner",
+  "Analytical Thinking",
+  "Teamwork",
+  "Adaptability",
+  "Time Management",
+];
 
 const ICONS: SkillIcon[] = [
   { icon: <FaHtml5 size={40} />, tag: 'HTML' },
   { icon: <IoLogoCss3 size={40} />, tag: 'CSS' },
-  { icon: <RiJavascriptFill size={40} />, tag: 'Javascript' },
-  { icon: <BiLogoTypescript size={40} />, tag: 'Typescript' },
+  { icon: <RiJavascriptFill size={40} />, tag: 'JavaScript' },
+  { icon: <BiLogoTypescript size={40} />, tag: 'TypeScript' },
+  { icon: <FaReact size={40} />, tag: 'React.js' },
+  { icon: <SiNextdotjs size={40} />, tag: 'Next.js' },
+  { icon: <SiAstro size={40} />, tag: 'Astro.js' },
   { icon: <FaPhp size={40} />, tag: 'PHP' },
   { icon: <FaLaravel size={40} />, tag: 'Laravel' },
-  { icon: <FaSass size={40} />, tag: 'SASS' },
-  { icon: <RiBootstrapFill size={40} />, tag: 'Bootstrap' },
+  { icon: <SiPython size={40} />, tag: 'Python' },
+  { icon: <SiDjango size={40} />, tag: 'Django' },
+  { icon: <SiGo size={40} />, tag: 'Golang' },
   { icon: <SiTailwindcss size={40} />, tag: 'TailwindCSS' },
+  { icon: <RiBootstrapFill size={40} />, tag: 'Bootstrap' },
   { icon: <SiAntdesign size={40} />, tag: 'AntDesign' },
-  { icon: <SiDevexpress size={40} />, tag: 'DevExpress' },
-  { icon: <FaReact size={40} />, tag: 'React.js' },
   { icon: <SiRedux size={40} />, tag: 'Redux' },
   { icon: <FaNodeJs size={40} />, tag: 'Node.js' },
   { icon: <SiExpress size={40} />, tag: 'Express.js' },
   { icon: <SiMysql size={40} />, tag: 'MySQL' },
   { icon: <SiPostgresql size={40} />, tag: 'PostgreSQL' },
-  { icon: <TbApi size={40} />, tag: 'API' },
+  { icon: <TbApi size={40} />, tag: 'RESTful API' },
   { icon: <FaGitAlt size={40} />, tag: 'Git' },
   { icon: <FaGithub size={40} />, tag: 'GitHub' },
   { icon: <FiGitlab size={40} />, tag: 'GitLab' },
-  { icon: <SiPostman size={40} />, tag: 'Postman' },
+  { icon: <SiFigma size={40} />, tag: 'Figma' },
+  { icon: <SiNginx size={40} />, tag: 'Nginx' },
+  { icon: <SiSonarqube size={40} />, tag: 'SonarQube' },
+  { icon: <BsBarChartFill size={40} />, tag: 'ApexCharts' },
   { icon: <FaJira size={40} />, tag: 'Jira' },
 ];
 
@@ -127,12 +157,14 @@ function About() {
           <div className="about-me-wrapper">
             <div className="about-me">
               <p>
-                Hi, my name is Hadis and i have recently completed a Bachelor of Computer Science, majoring in Informatics Engineering at Pamulang University.
+                Hi, my name is <strong>Hadis</strong>. I graduated with a Bachelor's Degree in Informatics Engineering from <strong>Pamulang University</strong> (GPA 3.53 / 4.00).
               </p>
               <p>
-                I have passion for all things technology especially programming. I love coding, its a pride of being able to translate ideas into code. Now i'm so enthusiast with React.js for developing of front-end web applications.
+                I am an experienced <strong>Frontend Developer</strong> with expertise in HTML, CSS, JavaScript, TypeScript, React.js, Next.js, Astro.js, TailwindCSS, PHP (Laravel), and Python (Django). I have a high passion for building modern, performant, clean, and scalable web applications.
               </p>
-              <p>I also creating back-end or full stack web apps with MERN(MYSQL/MongoDB, Express, React, Node) stack.</p>
+              <p>
+                Currently, I work as a Frontend Developer at <strong>PT Sinar Sakti Internasional</strong> in Jakarta, while also working on freelance projects building modern web architectures.
+              </p>
             </div>
           </div>
         </div>
