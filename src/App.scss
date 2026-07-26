@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -19,10 +20,11 @@ body {
 .wrapper {
   width: 95%;
   margin: auto;
+  padding-top: 60px;
   background-color: white;
   position: relative;
   z-index: 10;
-  overflow: hidden;
+  overflow: clip;
 
   .light-animate {
     width: 100%;

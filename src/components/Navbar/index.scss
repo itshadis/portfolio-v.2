@@ -1,81 +1,141 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background-color: #111111;
-  margin-right: 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: larger;
-  padding: 10px 30px 10px 0;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: aqua;
+    margin: 0;
   }
 
-  .hamburger-list {
-    width: 2rem;
-    height: 2rem;
+  .hamburger-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 2.2rem;
+    height: 2.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    transform: translate(1rem);
+    gap: 5px;
     cursor: pointer;
-    
+    z-index: 1001;
+    padding: 0;
+
     span {
-      width: 1rem;
+      display: block;
+      width: 1.5rem;
       height: 2px;
       background-color: aqua;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transform-origin: center;
+    }
+
+    &.open {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
     }
   }
 
   .navlist {
     position: fixed;
-    top: -130%;
-    z-index: 2;
-    background-color: aqua;
-    width: 95%;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    z-index: 999;
+    background-color: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(12px);
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     font-size: 1.5rem;
-    transition: all 0.5s;
-    
+    margin: 0;
+    padding: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
     a {
       font-weight: 600;
-      color: black;
+      color: white;
       text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: aqua;
+      }
     }
   }
 }
 
-
 @media (min-width: 768px) {
   .navbar {
-    margin-right: 3px;
+    padding: 15px 40px;
 
-    .hamburger-list {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .hamburger-btn {
       display: none;
     }
 
     .navlist {
-      background-color: inherit;
+      background-color: transparent;
+      backdrop-filter: none;
       position: static;
-      top: 0;
+      top: auto;
+      left: auto;
       width: auto;
       height: auto;
       flex-direction: row;
-      
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      gap: 1.5rem;
+      font-size: 1.2rem;
+
       a {
         font-weight: 500;
         color: white;
+
+        &:hover {
+          color: aqua;
+        }
       }
     }
   }
-
 }

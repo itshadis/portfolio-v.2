@@ -29,6 +29,11 @@ export default function Home() {
             opacity: 1,
             duration: 2,
             ease: 'power3.out',
+            onComplete: () => {
+              if (container.current) {
+                gsap.set(container.current, { clearProps: 'transform' });
+              }
+            },
           }
         );
       }
@@ -37,15 +42,17 @@ export default function Home() {
   );
 
   return (
-    <div ref={container} className="wrapper">
-      <div className="light-animate"></div>
+    <>
       <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Work />
-      <Contact />
-      <Footer />
-    </div>
+      <div ref={container} className="wrapper">
+        <div className="light-animate"></div>
+        <Hero />
+        <About />
+        <Experience />
+        <Work />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
