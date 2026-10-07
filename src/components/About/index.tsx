@@ -157,13 +157,13 @@ function About() {
           <div className="about-me-wrapper">
             <div className="about-me">
               <p>
-                Hi, my name is <strong>Hadis</strong>. I graduated with a Bachelor's Degree in Informatics Engineering from <strong>Pamulang University</strong> (GPA 3.53 / 4.00).
+                Software Engineer / Fullstack Developer with a Bachelor’s degree in Informatics Engineering from Pamulang University (GPA 3.53/4.00) and over 2 years of experience in designing, building, and maintaining end-to-end web applications for enterprise systems.
               </p>
               <p>
-                I am an experienced <strong>Frontend Developer</strong> with expertise in HTML, CSS, JavaScript, TypeScript, React.js, Next.js, Astro.js, TailwindCSS, PHP (Laravel), and Python (Django). I have a high passion for building modern, performant, clean, and scalable web applications.
+                Skilled in full-stack development using JavaScript, TypeScript, React.js, Next.js, Node.js, Express.js, PHP (Laravel), Python (Django), and SQL databases (MySQL, PostgreSQL). Proven track record at PT Sinar Sakti Internasional in refactoring backend architectures, developing RESTful APIs, and building maintainable frontend systems for enterprise-scale platforms like Puskeu Presisi 5.0 Polri.
               </p>
               <p>
-                Currently, I work as a Frontend Developer at <strong>PT Sinar Sakti Internasional</strong> in Jakarta, while also working on freelance projects building modern web architectures.
+                Passionate about writing clean code, optimizing database performance, and transforming complex requirements into functional, scalable, and user-friendly digital solutions. Always eager to stay updated with modern tech stacks and tackle new technical challenges.
               </p>
             </div>
           </div>
