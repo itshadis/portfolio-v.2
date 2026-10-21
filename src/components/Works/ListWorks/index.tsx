@@ -31,11 +31,13 @@ function ListWorks({ img, title, detail, stack, link }: ListWorksProps) {
           </div>
         </div>
         <div className="button-wrapper">
-          <button className="button">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              Demo
-            </a>
-          </button>
+          {link && (
+            <button className="button">
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                Demo
+              </a>
+            </button>
+          )}
         </div>
       </div>
     </>

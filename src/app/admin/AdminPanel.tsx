@@ -47,7 +47,7 @@ const emptyExpForm: ExpFormState = {
 
 const emptyProjForm: ProjFormState = {
   index: null,
-  group: 'self',
+  group: 'professional',
   img: '',
   title: '',
   detail: '',
@@ -232,12 +232,12 @@ export default function AdminPanel() {
     const title = projForm.title.trim();
     const detail = projForm.detail.trim();
     const link = projForm.link.trim();
-    if (!img || !title || !detail || !link) {
-      setMsg({ ok: false, text: 'Gambar, judul, deskripsi, dan link demo wajib diisi.' });
+    if (!img || !title || !detail) {
+      setMsg({ ok: false, text: 'Gambar, judul, dan deskripsi wajib diisi.' });
       return;
     }
-    if (!link.startsWith('http')) {
-      setMsg({ ok: false, text: 'Link demo harus diawali http:// atau https://.' });
+    if (link && !link.startsWith('http')) {
+      setMsg({ ok: false, text: 'Link demo harus kosong atau diawali http:// / https://.' });
       return;
     }
     if (projForm.stack.length === 0) {
@@ -565,7 +565,7 @@ export default function AdminPanel() {
                   </div>
                 </fieldset>
                 <label>
-                  Link demo
+                  Link demo (opsional)
                   <input
                     value={projForm.link}
                     placeholder="https://contoh.vercel.app"

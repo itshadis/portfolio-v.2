@@ -11,7 +11,7 @@ interface WorkProps {
 }
 
 function Work({ projects }: WorkProps) {
-  const [group, setGroup] = useState<ProjectGroup>('self');
+  const [group, setGroup] = useState<ProjectGroup>("professional");
   const shown = projects.filter((item) => item.group === group);
 
   return (

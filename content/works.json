@@ -52,5 +52,116 @@
       "Tailwind"
     ],
     "link": "https://its-web-calc.netlify.app"
+  },
+  {
+    "group": "professional",
+    "img": "/images/sipuma.jpg",
+    "title": "SIPUMA (Puma System)",
+    "detail": "SIPUMA (Puma System) is a reporting and manual bookkeeping module integrated into the \"Puskeu Presisi\" application, which belongs to the Finance Center of the Indonesian National Police (Puskeu Polri). The system is used to manage cash balance reports and financial bookkeeping within the Indonesian National Police’s operational units or Satuan Kerja (satker).",
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Tailwind"
+    ],
+    "link": ""
+  },
+  {
+    "group": "professional",
+    "img": "/images/verif.jpg",
+    "title": "Perwabkeu (Pertanggungjawaban Keuangan)",
+    "detail": "The Financial Verification Dashboard is a web-based application designed to support the Indonesian National Police (POLRI) in managing and monitoring financial verification processes. The application provides a centralized platform for reviewing financial reports, validating financial data, and tracking verification activities to improve accuracy, transparency, and accountability in financial management.",
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "CSS",
+      "Python",
+      "Django",
+      "API"
+    ],
+    "link": ""
+  },
+  {
+    "group": "professional",
+    "img": "/images/pipk.jpg",
+    "title": "PIPK",
+    "detail": "PIPK (Pengendalian Intern atas Pelaporan Keuangan) is a web-based application developed to support the Indonesian National Police (POLRI) in managing and monitoring internal controls over financial reporting. The application provides a centralized platform for documenting control activities, managing financial reporting information, and supporting evaluation and monitoring processes to improve accountability, compliance, and the reliability of financial reports.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+      "Django",
+      "Python",
+      "API"
+    ],
+    "link": ""
+  },
+  {
+    "group": "professional",
+    "img": "/images/lp-ssi.jpg",
+    "title": "Company Profile SSI",
+    "detail": "Sinar Sakti Internasional – Corporate Website is a company profile website designed to showcase the company’s technology solutions, electronic products, and manufacturing capabilities. The website provides information about the company’s background, business solutions, technology partners, product portfolio, factory operations, and achievements, helping potential customers and business partners understand the company’s products and services.",
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ],
+    "link": "https://sinarsaktiinternasional.com/"
+  },
+  {
+    "group": "professional",
+    "img": "/images/lp-wit.jpg",
+    "title": "Company Profile WIT",
+    "detail": "WIRA International Technology is a company profile website designed to showcase the company’s products and technology solutions, particularly in security systems, surveillance, access control, and other enterprise technologies. The website provides information about the company, its products, features, and solutions to help potential customers understand the services and technologies offered.",
+    "stack": [
+      "Astro",
+      "Tailwind",
+      "HTML",
+      "JavaScript"
+    ],
+    "link": "https://wirainternasionalteknologi.id/"
+  },
+  {
+    "group": "professional",
+    "img": "/images/lp-winmen.jpg",
+    "title": "Company Profile Winmen",
+    "detail": "Winmen – International Garmen is a company profile website for a garment manufacturer specializing in high-quality uniforms and official apparel for police, military, government institutions, and private organizations. The website provides information about the company, its products, production capabilities, manufacturing process, and quality standards.",
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ],
+    "link": "https://winmen.id/"
+  },
+  {
+    "group": "professional",
+    "img": "/images/kompak-98.jpg",
+    "title": "KOMPAK 98",
+    "detail": "KOMPAK 98 is an alumni community portal designed to strengthen connections among alumni, share information about events and activities, and foster meaningful collaboration. The website serves as a centralized platform for alumni to stay connected, access community updates, participate in activities, and build lasting relationships through networking and collaboration.",
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "Vue",
+      "Nuxt",
+      "Tailwind"
+    ],
+    "link": "https://kompak98.com/"
+  },
+  {
+    "group": "professional",
+    "img": "/images/gema.jpg",
+    "title": "GEMA",
+    "detail": "GEMA (Gerbang Masukan dan Aspirasi Online Masyarakat) Kemenag Kota Bogor is an information and public service website designed to support the digital services of the Ministry of Religious Affairs in Bogor City. The platform provides access to institutional information, news, announcements, and various services related to religious affairs, Islamic education, Hajj and Umrah, religious guidance, and other community services, helping the public access relevant information and services more easily.",
+    "stack": [
+      "HTML",
+      "JavaScript",
+      "Tailwind",
+      "Vue",
+      "Nuxt",
+      "API"
+    ],
+    "link": "https://www.gemakemenagkotabogor.id/"
   }
 ]

@@ -17,7 +17,11 @@ export const projectSchema = z.object({
   title: z.string().min(1),
   detail: z.string().min(1),
   stack: z.array(z.enum(STACK_LABELS)).min(1),
-  link: z.string().startsWith('http'),
+  link: z
+    .string()
+    .refine((v) => v === '' || /^https?:\/\//.test(v), {
+      message: 'Link harus kosong atau diawali http:// / https://',
+    }),
 });
 
 export const projectListSchema = z.array(projectSchema);
