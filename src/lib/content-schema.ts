@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { PROJECT_GROUPS } from './project-groups';
 import { STACK_LABELS } from './stack-labels';
 
 export const experienceSchema = z.object({
@@ -11,6 +12,7 @@ export const experienceSchema = z.object({
 export const experienceListSchema = z.array(experienceSchema);
 
 export const projectSchema = z.object({
+  group: z.enum(PROJECT_GROUPS),
   img: z.string().min(1),
   title: z.string().min(1),
   detail: z.string().min(1),

@@ -1,8 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
-import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { LuArrowDown, LuArrowUp } from 'react-icons/lu';
 import type { ExperienceItem, Project, SiteContent } from '@/lib/content-schema';
+import {
+  PROJECT_GROUPS,
+  PROJECT_GROUP_LABELS,
+  type ProjectGroup,
+} from '@/lib/project-groups';
 import { STACK_LABELS, type StackLabel } from '@/lib/stack-labels';
 import './admin.scss';
 
@@ -18,11 +23,18 @@ interface ExpFormState {
 
 interface ProjFormState {
   index: number | null;
+  group: ProjectGroup;
   img: string;
   title: string;
   detail: string;
   stack: StackLabel[];
   link: string;
+}
+
+interface ConfirmDeleteState {
+  type: 'experience' | 'project';
+  index: number;
+  title: string;
 }
 
 const emptyExpForm: ExpFormState = {
@@ -35,6 +47,7 @@ const emptyExpForm: ExpFormState = {
 
 const emptyProjForm: ProjFormState = {
   index: null,
+  group: 'self',
   img: '',
   title: '',
   detail: '',
@@ -57,8 +70,29 @@ export default function AdminPanel() {
   const [site, setSite] = useState<SiteContent | null>(null);
   const [expForm, setExpForm] = useState<ExpFormState | null>(null);
   const [projForm, setProjForm] = useState<ProjFormState | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState<ConfirmDeleteState | null>(null);
+  const [closing, setClosing] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  const closeTimer = useRef<number | null>(null);
+
+  const closeModal = useCallback(() => {
+    if (closeTimer.current !== null) return;
+    setClosing(true);
+    closeTimer.current = window.setTimeout(() => {
+      setExpForm(null);
+      setProjForm(null);
+      setConfirmDelete(null);
+      setClosing(false);
+      closeTimer.current = null;
+    }, 300);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current !== null) window.clearTimeout(closeTimer.current);
+    };
+  }, []);
 
   const load = useCallback(async () => {
     const [expRes, worksRes, siteRes] = await Promise.all([
@@ -82,13 +116,12 @@ export default function AdminPanel() {
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setExpForm(null);
-        setProjForm(null);
+        closeModal();
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [closeModal]);
 
   async function saveExperiences(list: ExperienceItem[], okText: string) {
     setBusy(true);
@@ -155,6 +188,22 @@ export default function AdminPanel() {
     setMsg({ ok: true, text: 'CV diperbarui.' });
   }
 
+  function confirmDeleteNow() {
+    if (!confirmDelete) return;
+    if (confirmDelete.type === 'experience') {
+      saveExperiences(
+        experiences.filter((_, i) => i !== confirmDelete.index),
+        'Pengalaman dihapus.'
+      );
+    } else {
+      saveProjects(
+        projects.filter((_, i) => i !== confirmDelete.index),
+        'Proyek dihapus.'
+      );
+    }
+    closeModal();
+  }
+
   function submitExpForm() {
     if (!expForm) return;
     const title = expForm.title.trim();
@@ -174,7 +223,7 @@ export default function AdminPanel() {
         ? [...experiences, item]
         : experiences.map((e, i) => (i === expForm.index ? item : e));
     saveExperiences(list, expForm.index === null ? 'Pengalaman ditambahkan.' : 'Pengalaman diperbarui.');
-    setExpForm(null);
+    closeModal();
   }
 
   function submitProjForm() {
@@ -195,13 +244,20 @@ export default function AdminPanel() {
       setMsg({ ok: false, text: 'Pilih minimal satu stack.' });
       return;
     }
-    const item: Project = { img, title, detail, stack: projForm.stack, link };
+    const item: Project = {
+      group: projForm.group,
+      img,
+      title,
+      detail,
+      stack: projForm.stack,
+      link,
+    };
     const list =
       projForm.index === null
         ? [...projects, item]
         : projects.map((p, i) => (i === projForm.index ? item : p));
     saveProjects(list, projForm.index === null ? 'Proyek ditambahkan.' : 'Proyek diperbarui.');
-    setProjForm(null);
+    closeModal();
   }
 
   return (
@@ -226,7 +282,7 @@ export default function AdminPanel() {
 
       {msg && <p className={msg.ok ? 'msg ok' : 'msg err'}>{msg.text}</p>}
       <p className="hint">
-        Perubahan tersimpan ke file JSON. Jalankan <code>git add . &amp;&amp; git commit &amp;&amp; git push</code>{' '}
+        Perubahan tersimpan ke file JSON. Jalankan <span>git add . &amp;&amp; git commit &amp;&amp; git push</span>{' '}
         untuk publish.
       </p>
 
@@ -251,22 +307,22 @@ export default function AdminPanel() {
                 </div>
                 <div className="actions">
                   <button
-                    className="icon"
+                    className="icon up"
                     title="Naik"
                     aria-label="Naik"
                     onClick={() => saveExperiences(move(experiences, index, -1), 'Urutan diperbarui.')}
                     disabled={index === 0 || busy}
                   >
-                    <FaArrowUp />
+                    <LuArrowUp />
                   </button>
                   <button
-                    className="icon"
+                    className="icon down"
                     title="Turun"
                     aria-label="Turun"
                     onClick={() => saveExperiences(move(experiences, index, 1), 'Urutan diperbarui.')}
                     disabled={index === experiences.length - 1 || busy}
                   >
-                    <FaArrowDown />
+                    <LuArrowDown />
                   </button>
                   <button
                     onClick={() =>
@@ -283,12 +339,7 @@ export default function AdminPanel() {
                   </button>
                   <button
                     className="danger"
-                    onClick={() =>
-                      saveExperiences(
-                        experiences.filter((_, i) => i !== index),
-                        'Pengalaman dihapus.'
-                      )
-                    }
+                    onClick={() => setConfirmDelete({ type: 'experience', index, title: item.title })}
                     disabled={busy}
                   >
                     Hapus
@@ -299,9 +350,12 @@ export default function AdminPanel() {
           </ul>
 
           {expForm && (
-            <div className="modal-overlay" onClick={() => setExpForm(null)}>
+            <div
+              className={`modal-overlay${closing ? ' closing' : ''}`}
+              onClick={closeModal}
+            >
               <form
-                className="editor modal"
+                className={`editor modal${closing ? ' closing' : ''}`}
                 onClick={(e) => e.stopPropagation()}
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -309,41 +363,43 @@ export default function AdminPanel() {
                 }}
               >
               <h3>{expForm.index === null ? 'Tambah Pengalaman' : 'Edit Pengalaman'}</h3>
-              <label>
-                Judul
-                <input
-                  value={expForm.title}
-                  onChange={(e) => setExpForm({ ...expForm, title: e.target.value })}
-                />
-              </label>
-              <label>
-                Perusahaan
-                <input
-                  value={expForm.company}
-                  onChange={(e) => setExpForm({ ...expForm, company: e.target.value })}
-                />
-              </label>
-              <label>
-                Tanggal
-                <input
-                  value={expForm.date}
-                  placeholder="Feb, 2025 – Present"
-                  onChange={(e) => setExpForm({ ...expForm, date: e.target.value })}
-                />
-              </label>
-              <label>
-                Deskripsi (satu poin per baris)
-                <textarea
-                  rows={8}
-                  value={expForm.describe}
-                  onChange={(e) => setExpForm({ ...expForm, describe: e.target.value })}
-                />
-              </label>
+              <div className="modal-body">
+                <label>
+                  Judul
+                  <input
+                    value={expForm.title}
+                    onChange={(e) => setExpForm({ ...expForm, title: e.target.value })}
+                  />
+                </label>
+                <label>
+                  Perusahaan
+                  <input
+                    value={expForm.company}
+                    onChange={(e) => setExpForm({ ...expForm, company: e.target.value })}
+                  />
+                </label>
+                <label>
+                  Tanggal
+                  <input
+                    value={expForm.date}
+                    placeholder="Feb, 2025 – Present"
+                    onChange={(e) => setExpForm({ ...expForm, date: e.target.value })}
+                  />
+                </label>
+                <label>
+                  Deskripsi (satu poin per baris)
+                  <textarea
+                    rows={8}
+                    value={expForm.describe}
+                    onChange={(e) => setExpForm({ ...expForm, describe: e.target.value })}
+                  />
+                </label>
+              </div>
               <div className="actions">
                 <button type="submit" className="primary" disabled={busy}>
                   Simpan
                 </button>
-                <button type="button" onClick={() => setExpForm(null)}>
+                <button type="button" onClick={closeModal}>
                   Batal
                 </button>
               </div>
@@ -370,31 +426,34 @@ export default function AdminPanel() {
               <li key={index}>
                 <div className="item-info">
                   <strong>{item.title}</strong>
-                  <small>{item.stack.join(', ')}</small>
+                  <small>
+                    {PROJECT_GROUP_LABELS[item.group]} · {item.stack.join(', ')}
+                  </small>
                 </div>
                 <div className="actions">
                   <button
-                    className="icon"
+                    className="icon up"
                     title="Naik"
                     aria-label="Naik"
                     onClick={() => saveProjects(move(projects, index, -1), 'Urutan diperbarui.')}
                     disabled={index === 0 || busy}
                   >
-                    <FaArrowUp />
+                    <LuArrowUp />
                   </button>
                   <button
-                    className="icon"
+                    className="icon down"
                     title="Turun"
                     aria-label="Turun"
                     onClick={() => saveProjects(move(projects, index, 1), 'Urutan diperbarui.')}
                     disabled={index === projects.length - 1 || busy}
                   >
-                    <FaArrowDown />
+                    <LuArrowDown />
                   </button>
                   <button
                     onClick={() =>
                       setProjForm({
                         index,
+                        group: item.group,
                         img: item.img,
                         title: item.title,
                         detail: item.detail,
@@ -407,12 +466,7 @@ export default function AdminPanel() {
                   </button>
                   <button
                     className="danger"
-                    onClick={() =>
-                      saveProjects(
-                        projects.filter((_, i) => i !== index),
-                        'Proyek dihapus.'
-                      )
-                    }
+                    onClick={() => setConfirmDelete({ type: 'project', index, title: item.title })}
                     disabled={busy}
                   >
                     Hapus
@@ -423,9 +477,12 @@ export default function AdminPanel() {
           </ul>
 
           {projForm && (
-            <div className="modal-overlay" onClick={() => setProjForm(null)}>
+            <div
+              className={`modal-overlay${closing ? ' closing' : ''}`}
+              onClick={closeModal}
+            >
               <form
-                className="editor modal"
+                className={`editor modal${closing ? ' closing' : ''}`}
                 onClick={(e) => e.stopPropagation()}
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -433,76 +490,94 @@ export default function AdminPanel() {
                 }}
               >
               <h3>{projForm.index === null ? 'Tambah Proyek' : 'Edit Proyek'}</h3>
-              <label>
-                Judul
-                <input
-                  value={projForm.title}
-                  onChange={(e) => setProjForm({ ...projForm, title: e.target.value })}
-                />
-              </label>
-              <label>
-                Deskripsi
-                <textarea
-                  rows={5}
-                  value={projForm.detail}
-                  onChange={(e) => setProjForm({ ...projForm, detail: e.target.value })}
-                />
-              </label>
-              <label>
-                Gambar (unggah file atau isi path)
-                <input
-                  type="file"
-                  accept="image/*"
-                  disabled={busy}
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) uploadImage(file);
-                    e.target.value = '';
-                  }}
-                />
-              </label>
-              <label>
-                Path gambar
-                <input
-                  value={projForm.img}
-                  placeholder="/images/nama-gambar.png"
-                  onChange={(e) => setProjForm({ ...projForm, img: e.target.value })}
-                />
-              </label>
-              {projForm.img && <img className="preview" src={projForm.img} alt="Pratinjau gambar" />}
-              <fieldset>
-                <legend>Stack</legend>
-                {STACK_LABELS.map((label) => (
-                  <label key={label} className="check">
-                    <input
-                      type="checkbox"
-                      checked={projForm.stack.includes(label)}
-                      onChange={(e) =>
-                        setProjForm({
-                          ...projForm,
-                          stack: e.target.checked
-                            ? [...projForm.stack, label]
-                            : projForm.stack.filter((s) => s !== label),
-                        })
-                      }
-                    />
-                    {label}
-                  </label>
-                ))}
-              </fieldset>
-              <label>
-                Link demo
-                <input
-                  value={projForm.link}
-                  placeholder="https://contoh.vercel.app"
-                  onChange={(e) => setProjForm({ ...projForm, link: e.target.value })}
-                />
-              </label>
+              <div className="modal-body">
+                <fieldset>
+                  <legend>Kelompok</legend>
+                  {PROJECT_GROUPS.map((g) => (
+                    <label key={g} className="check">
+                      <input
+                        type="radio"
+                        name="group"
+                        checked={projForm.group === g}
+                        onChange={() => setProjForm({ ...projForm, group: g })}
+                      />
+                      {PROJECT_GROUP_LABELS[g]}
+                    </label>
+                  ))}
+                </fieldset>
+                <label>
+                  Judul
+                  <input
+                    value={projForm.title}
+                    onChange={(e) => setProjForm({ ...projForm, title: e.target.value })}
+                  />
+                </label>
+                <label>
+                  Deskripsi
+                  <textarea
+                    rows={5}
+                    value={projForm.detail}
+                    onChange={(e) => setProjForm({ ...projForm, detail: e.target.value })}
+                  />
+                </label>
+                <label>
+                  Gambar (unggah file atau isi path)
+                  <input
+                    type="file"
+                    accept="image/*"
+                    disabled={busy}
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) uploadImage(file);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+                <label>
+                  Path gambar
+                  <input
+                    value={projForm.img}
+                    placeholder="/images/nama-gambar.png"
+                    onChange={(e) => setProjForm({ ...projForm, img: e.target.value })}
+                  />
+                </label>
+                {projForm.img && <img className="preview" src={projForm.img} alt="Pratinjau gambar" />}
+                <fieldset>
+                  <legend>Stack</legend>
+                  <div className="check-grid">
+                    {STACK_LABELS.map((label) => (
+                      <label key={label} className="check">
+                        <input
+                          type="checkbox"
+                          checked={projForm.stack.includes(label)}
+                          onChange={(e) =>
+                            setProjForm({
+                              ...projForm,
+                              stack: e.target.checked
+                                ? [...projForm.stack, label]
+                                : projForm.stack.filter((s) => s !== label),
+                            })
+                          }
+                        />
+                        {label}
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+                <label>
+                  Link demo
+                  <input
+                    value={projForm.link}
+                    placeholder="https://contoh.vercel.app"
+                    onChange={(e) => setProjForm({ ...projForm, link: e.target.value })}
+                  />
+                </label>
+              </div>
               <div className="actions">
                 <button type="submit" className="primary" disabled={busy}>
                   Simpan
                 </button>
-                <button type="button" onClick={() => setProjForm(null)}>
+                <button type="button" onClick={closeModal}>
                   Batal
                 </button>
               </div>
@@ -538,6 +613,40 @@ export default function AdminPanel() {
             <p>Memuat…</p>
           )}
         </section>
+      )}
+
+      {confirmDelete && (
+        <div
+          className={`modal-overlay${closing ? ' closing' : ''}`}
+          onClick={closeModal}
+        >
+          <div
+            className={`editor modal confirm${closing ? ' closing' : ''}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3>
+              Hapus {confirmDelete.type === 'experience' ? 'Pengalaman' : 'Proyek'}?
+            </h3>
+            <div className="modal-body">
+              <p>
+                Data <strong>{confirmDelete.title}</strong> akan dihapus permanen.
+              </p>
+            </div>
+            <div className="actions">
+              <button
+                type="button"
+                className="danger"
+                onClick={confirmDeleteNow}
+                disabled={busy}
+              >
+                Ya, Hapus
+              </button>
+              <button type="button" onClick={closeModal}>
+                Batal
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </main>
   );

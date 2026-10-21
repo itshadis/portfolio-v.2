@@ -13,8 +13,12 @@ One entry in the work-history list: a role at a company over a period, with supp
 _Avoid_: work experience item, job, history entry
 
 **Project**:
-One entry in the portfolio showcase list: a built product with a thumbnail, description, stack, and demo link.
+One entry in the portfolio showcase list: a built product with a thumbnail, description, stack, and demo link, filed under a Project Group.
 _Avoid_: works item, portfolio piece, job
+
+**Project Group**:
+The bucket a Project belongs to: "Self Project" or "Professional Projects". The showcase list shows one group at a time via tabs.
+_Avoid_: category, kategori, classification
 
 **Stack Label**:
 The canonical name of one technology on a Project (e.g. "React", "MySQL"), mapped to an icon at render time. Unknown labels fall back to a generic icon.
