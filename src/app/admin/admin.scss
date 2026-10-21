@@ -1,0 +1,269 @@
+.admin {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #1f2937;
+
+  .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    h1 {
+      font-size: 40px;
+      margin: 0;
+      color: aqua;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+
+      button {
+        padding: 12px 22px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        background: #fff;
+        font-size: 20px;
+        cursor: pointer;
+
+        &.active {
+          background: aqua;
+          color: black;
+          border-color: aqua;
+        }
+      }
+    }
+  }
+
+  .hint {
+    margin: 16px 0;
+    font-size: 18px;
+    color: #6b7280;
+  }
+
+  .msg {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 20px;
+
+    &.ok {
+      background: rgba(0, 255, 255, 0.12);
+      color: aqua;
+    }
+
+    &.err {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+  }
+
+  section {
+    margin-top: 24px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 0 0 16px;
+  }
+
+  button {
+    padding: 10px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    color: #1f2937;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.primary {
+      background: aqua;
+      color: black;
+      border: none;
+      border-radius: 4px;
+
+      &:hover:not(:disabled) {
+        background: rgb(0, 190, 190);
+      }
+    }
+
+    &.danger {
+      color: #991b1b;
+      border-color: #fca5a5;
+    }
+
+    &.icon {
+      padding: 4px;
+      background: transparent;
+      border: none;
+      color: aqua;
+
+      &:hover:not(:disabled) {
+        color: rgb(0, 190, 190);
+      }
+
+      &:disabled {
+        color: aqua;
+        opacity: 0.35;
+      }
+    }
+  }
+
+  .item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid aqua;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 22px;
+
+      small {
+        font-size: 18px;
+        color: #6b7280;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px;
+    overflow-y: auto;
+  }
+
+  .editor {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &.modal {
+      width: 100%;
+      max-width: 640px;
+      background: #111111;
+      border: 1px solid aqua;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 20px;
+      font-family: inherit;
+      background: #fff;
+      color: #1f2937;
+
+      &:focus {
+        border-color: aqua;
+        outline: none;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 10px 12px;
+
+      legend {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 4px 0;
+
+        input {
+          accent-color: aqua;
+        }
+      }
+    }
+
+    .preview {
+      max-width: 320px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+    }
+  }
+
+  .upload {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    max-width: 360px;
+
+    input {
+      color: #1f2937;
+    }
+  }
+
+  code {
+    background: #f3f4f6;
+    color: #1f2937;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}

@@ -8,7 +8,11 @@ import './index.scss';
 
 gsap.registerPlugin(useGSAP);
 
-function Hero() {
+interface HeroProps {
+  cvHref: string;
+}
+
+function Hero({ cvHref }: HeroProps) {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -40,7 +44,7 @@ function Hero() {
         <p>Based on Tangerang, Indonesia.</p>
       </div>
 
-      <CV className="cv" />
+      <CV className="cv" href={cvHref} />
     </section>
   );
 }

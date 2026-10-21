@@ -5,9 +5,10 @@ import './index.scss';
 
 interface CVProps {
   className?: string;
+  href: string;
 }
 
-function CV({ className }: CVProps) {
+function CV({ className, href }: CVProps) {
   const [fade, setFade] = useState<string>('');
 
   const handleMouseEnter = () => {
@@ -29,7 +30,7 @@ function CV({ className }: CVProps) {
         <span></span>
         <span className={fade}></span>
         <a
-          href="/documents/CV ATS - Hadis.pdf"
+          href={href}
           onMouseEnter={handleMouseEnter}
           onMouseOut={handleMouseOut}
           download

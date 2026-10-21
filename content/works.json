@@ -1,0 +1,52 @@
+[
+  {
+    "img": "/images/self-order.png",
+    "title": "Orderin",
+    "detail": "A simple self-order McDonald's clone that purpose to ease customers to ordering and without having to queue. The customer that have been ordering will get the code which will be given to the cashier to confirm the payment.",
+    "stack": [
+      "JavaScript",
+      "React",
+      "Tailwind",
+      "Node.js",
+      "Express"
+    ],
+    "link": "https://its-orderin.netlify.app"
+  },
+  {
+    "img": "/images/vrent.png",
+    "title": "V-Rent",
+    "detail": "It is a fullstack car rental web application, aimed at making it easier for car rental business owners to manage and also to making it easier for customer to rent a car.",
+    "stack": [
+      "JavaScript",
+      "React",
+      "Tailwind",
+      "Node.js",
+      "Express",
+      "MySQL"
+    ],
+    "link": "https://v-rent.vercel.app"
+  },
+  {
+    "img": "/images/muvi.png",
+    "title": "itsMuvis",
+    "detail": "An application that displays a list of the latest movies from around the world along with detailed information about each movie. This application provides movies sorted into categories such as 'Trending Today', 'Top Rated', and 'Upcoming'. Additionally, you have the option to search for a specific movie of your choice.",
+    "stack": [
+      "JavaScript",
+      "React",
+      "Tailwind",
+      "API"
+    ],
+    "link": "https://its-muvi.netlify.app/"
+  },
+  {
+    "img": "/images/web-calc.png",
+    "title": "Web - Calc",
+    "detail": "Web - Calc is a calculation application with various functions such as simple multiplication, addition, subtraction (standard calculator), calculation of ideal body weight (BMI), temperature conversion calculation, and other calculations that will be added to this application..",
+    "stack": [
+      "JavaScript",
+      "React",
+      "Tailwind"
+    ],
+    "link": "https://its-web-calc.netlify.app"
+  }
+]

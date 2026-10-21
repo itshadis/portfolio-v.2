@@ -1,11 +1,11 @@
 import './index.scss';
-import React from 'react';
+import StackIcon from '@/lib/stack-icons';
 
 interface ListWorksProps {
   img: string;
   title: string;
   detail: string;
-  stack: React.ReactNode[];
+  stack: string[];
   link: string;
 }
 
@@ -23,7 +23,9 @@ function ListWorks({ img, title, detail, stack, link }: ListWorksProps) {
             <span>Stack :</span>
             <ul className="list-stack">
               {stack.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}>
+                  <StackIcon label={item} />
+                </li>
               ))}
             </ul>
           </div>
