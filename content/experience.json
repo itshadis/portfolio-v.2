@@ -42,17 +42,6 @@
     ]
   },
   {
-    "title": "Fullstack Developer",
-    "company": "Freelance – Remote",
-    "date": "Sep, 2023 – Dec, 2024",
-    "describe": [
-      "Developed a Decision Support System (DSS) to identify top-performing employees at PT Samco Farma.",
-      "Implemented the Simple Additive Weighting methodology for calculating best employees in a web-based application.",
-      "Designed and optimized relational database schemas for assessment criteria, weights, and employee data.",
-      "Designed and built a web-based application integrating both frontend and backend functionalities."
-    ]
-  },
-  {
     "title": "Team Buddy Frontend Developer",
     "company": "Harisenin.com – Jakarta, Indonesia",
     "date": "Feb, 2024 – May, 2024",
@@ -64,12 +53,14 @@
     ]
   },
   {
-    "title": "Full-Stack Web Developer",
-    "company": "Harisenin.com – Jakarta, Indonesia",
-    "date": "May, 2023 – Sep, 2023",
+    "title": "Fullstack Developer",
+    "company": "Freelance – Remote",
+    "date": "Sep, 2023 – Dec, 2024",
     "describe": [
-      "Built car rental application web-based as final project (V-Rent) with MERN stack.",
-      "Relevant Course Work: HTML, CSS, JavaScript, React.js, Redux, TypeScript, Node.js, Express.js, and MySQL."
+      "Developed a Decision Support System (DSS) to identify top-performing employees at PT Samco Farma.",
+      "Implemented the Simple Additive Weighting methodology for calculating best employees in a web-based application.",
+      "Designed and optimized relational database schemas for assessment criteria, weights, and employee data.",
+      "Designed and built a web-based application integrating both frontend and backend functionalities."
     ]
   }
 ]
