@@ -39,7 +39,7 @@ function Navbar() {
 
   return (
     <nav className="navbar" aria-label="Main Navigation">
-      <h1>Software Developer</h1>
+      <h1>Software Engineer</h1>
       <button
         type="button"
         onClick={() => setIsShow(!isShow)}

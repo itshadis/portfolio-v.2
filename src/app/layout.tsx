@@ -35,8 +35,8 @@ const rajdhani = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Hadis - Software Developer',
-  description: 'Portfolio of Hadis, a Software Developer based in Tangerang, Indonesia.',
+  title: 'Portfolio | Hadis - Software Engineer',
+  description: 'Portfolio of Hadis, a Software Engineer based in Tangerang, Indonesia.',
 };
 
 export default function RootLayout({
